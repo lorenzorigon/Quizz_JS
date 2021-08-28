@@ -8,7 +8,27 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Teste</h1>
+    <h1 id="main-title">Quizz de Programação</h1>
+    <!--Scoreboard-->
+    <div id="score-container">
+        <p id="display-score"><span>90</span>%</p>
+        <p>Você acertou <span id="correct-answer">0</span> de <span id="questions-qty">10</span> perguntas</p>
+        <button id="restart">Refazer Quizz</button>
+    </div>
+    <!--Quizz container-->
+    <div id="quizz-container">
+        <p id="question"><span id="question-number">1</span> - <span id="question-text">você pinta como eu pinto?</span></p>
+        <div id="answers-box">
+            <button class="correct-answer"><span class="btn-letter">a </span><span class="question-answer">sim</span></button>
+            <button class="wrong-answer"><span class="btn-letter">b </span><span class="question-answer">nao</span></button>
+            <button><span class="btn-letter">c </span><span class="question-answer">talvez</span></button>
+            <button><span class="btn-letter">d </span><span class="question-answer">pulo</span></button>
+        </div>
+    </div>
+
+    <!--Template Resposta-->
+    <button class="answer-template hide"><span class="btn-letter">a </span><span class="question-answer">sim</span></button>
+
     <script src="js/scripts.js"></script>
 </body>
 </html>
