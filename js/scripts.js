@@ -118,11 +118,47 @@ function createQuestions(i){
         
         //inserir evento de click no botão
         answerTemplate.addEventListener('click', function(){
-            console.log(this);
+            checkAnwser(this);
         });
-
-        //incrementar o número da questão
-        actualQuestion++;
     });
 
+    //incrementar o número da questão
+    actualQuestion++;
+
+}
+
+//verificando respsota do usuário
+function checkAnwser(btn){
+    //seleciona todos os botões
+    const buttons = answersBox.querySelectorAll('button');
+    //verifica se a resposta está correta e add classes aos btns
+    buttons.forEach(function(button){
+        if(button.getAttribute('correct-answer') === 'true'){
+            button.classList.add('correct-answer');
+            //checa se o usuário acertou a pergunta
+            if(btn === button){
+                //incremento dos pontos
+                points++;
+            }
+        }else{
+            button.classList.add('wrong-answer');
+        }
+    });
+
+    //exibir próxima pergunta
+    nextQuestion();
+}
+
+//exibe próxima pergunta do Quizz
+function nextQuestion(){
+    //timer para o usuário ver as respostas certa/erradas
+    setTimeout(function(){
+        //verifica se ainda há perguntas
+        if(actualQuestion >= questions.length){
+            //apresenta mensagem de sucesso
+            
+        }else{
+            createQuestions(actualQuestion);
+        }
+    }, 1500);
 }
