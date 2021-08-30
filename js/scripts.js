@@ -168,6 +168,7 @@ function nextQuestion(){
 function showSucessMessage(){
     //esconderQuizz
     hideOrShowQuizz();
+    
     //trocar dados da tela de sucesso
 
     //calcular score
@@ -191,3 +192,14 @@ function hideOrShowQuizz(){
     quizzContainer.classList.toggle('hide');
     scoreContainer.classList.toggle('hide');
 }
+
+//reiniciar quizz
+const restartBtn = document.querySelector('#restart');
+
+restartBtn.addEventListener("click", function(){
+    // zerar jogo
+    actualQuestion = 0;
+    points = 0;
+    hideOrShowQuizz();
+    init();
+});
